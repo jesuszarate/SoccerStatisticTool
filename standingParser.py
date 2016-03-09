@@ -1,3 +1,4 @@
+
 import json
 with open('LigaMXStadings2016.txt', 'r') as standings:
     teams = []
