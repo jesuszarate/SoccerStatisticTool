@@ -2,165 +2,97 @@
 <Torneo>
   <jornada9>
     <game>
-      <team name="Tijuana">        
-        <goals>0</goals>
-      </team>
-      <team name="Leon">        
-        <goals>0</goals>
-      </team>
-      <winner>draw</winner>
+      <team name="Tijuana" goals="0"/>
+      <team name="Leon" goals="0"/>
+      <expected>draw</expected>
+    </game>
+    <game> 
+      <team name="Pumas UNAM" goals="0"/>
+      <team name="Cruz Azul" goals="0"/>
+      <expected>draw</expected>
     </game>
     <game>
-      <team name="Pumas UNAM">        
-        <goals>2</goals>
-      </team>
-      <team name="Cruz Azul">        
-        <goals>2</goals>
-      </team>
-      <winner>draw</winner>
+      <team name="America" goals="0"/>
+      <team name="Monarcas" goals="0"/>
+      <expected>America</expected>
     </game>
     <game>
-      <team name="America">        
-        <goals>4</goals>
-      </team>
-      <team name="Monarcas">        
-        <goals>1</goals>
-      </team>
-      <winner>America</winner>
+      <team name="Queretaro" goals="0"/>
+      <team name="Chivas" goals="0"/>
+      <expected>Chivas</expected>
     </game>
     <game>
-      <team name="Queretaro">        
-        <goals>0</goals>
-      </team>
-      <team name="Chivas">        
-        <goals>2</goals>
-      </team>
-      <winner>Chivas</winner>
+      <team name="Monterrey" goals="0"/>
+      <team name="Tigres" goals="0"/>
+      <expected>Monterrey</expected>
     </game>
     <game>
-      <team name="Monterrey">        
-        <goals>1</goals>
-      </team>
-      <team name="Tigres">        
-        <goals>0</goals>
-      </team>
-      <winner>Monterrey</winner>
+      <team name="Pachuca" goals="0"/>
+      <team name="Dorados" goals="0"/>
+      <expected>draw</expected>
     </game>
     <game>
-      <team name="Pachuca">        
-        <goals>2</goals>
-      </team>
-      <team name="Dorados">        
-        <goals>2</goals>
-      </team>
-      <winner>draw</winner>
+      <team name="Atlas" goals="0"/>
+      <team name="Santos Laguna" goals="0"/>
+      <expected>Santos Laguna</expected>
     </game>
     <game>
-      <team name="Atlas">        
-        <goals>1</goals>
-      </team>
-      <team name="Santos Laguna">        
-        <goals>2</goals>
-      </team>
-      <winner>Santos Laguna</winner>
-    </game>
-    <game>
-      <team name="Jaguares">        
-        <goals>3</goals>
-      </team>
-      <team name="Toluca">        
-        <goals>2</goals>
-      </team>
-      <winner>Jaguares</winner>
+      <team name="Jaguares" goals="0"/>
+      <team name="Toluca" goals="0"/>
+      <expected>Jaguares</expected>
     </game>
   </jornada9>
   <jornada10>
     <game>
-      <team name="Veracruz">
-        <goals>0</goals>
-      </team>
-      <team name="Atlas">
-        <goals>0</goals>
-      </team>
+      <team name="Veracruz" goals="0"/>
+      <team name="Atlas" goals="0"/>
       <winner></winner>
       <expected>Atlas</expected>
     </game>
     <game>
-      <team name="Santos">        
-        <goals>0</goals>
-      </team>
-      <team name="Pachuca">        
-        <goals></goals>
-      </team>
+      <team name="Santos" goals="0"/>
+      <team name="Pachuca" goals="0"/>
       <winner></winner>
       <expected>Santos</expected>
     </game>
     <game>
-      <team name="Cruz Azul">        
-        <goals>0</goals>
-      </team>
-      <team name="Puebla">        
-        <goals>0</goals>
-      </team>
+      <team name="Cruz Azul" goals="0"/>
+      <team name="Puebla" goals="0"/>
       <winner></winner>
       <expected>Cruz Azul</expected>
     </game>
     <game>
-      <team name="Tigres">        
-        <goals>0</goals>
-      </team>
-      <team name="Pumas UNAM">        
-        <goals>2</goals>
-      </team>
+      <team name="Tigres" goals="0"/>
+      <team name="Pumas UNAM" goals="0"/>
       <winner></winner>
       <expected>Tigres</expected>
     </game>
     <game>
-      <team name="Leon">        
-        <goals>0</goals>
-      </team>
-      <team name="Queretaro">        
-        <goals>0</goals>
-      </team>
+      <team name="Leon" goals="0"/>
+      <team name="Queretaro" goals="0"/>
       <winner></winner>
       <expected>Leon</expected>
     </game>
     <game>
-      <team name="Morelia">        
-        <goals>0</goals>
-      </team>
-      <team name="Monterrey">        
-        <goals></goals>
-      </team>
+      <team name="Morelia" goals="0"/>
+      <team name="Monterrey" goals="0"/>
       <winner></winner>
       <expected>Monterrey</expected>
     </game>
     <game>
-      <team name="Jaguares">        
-        <goals>0</goals>
-      </team>
-      <team name="Tijuana">        
-        <goals>0</goals>
-      </team>
-      <winner></winner>
+      <team name="Jaguares" goals="0"/>
+      <team name="Tijuana" goals="0"/>
+      <expected>Jaguares</expected>
     </game>
     <game>
-      <team name="Toluca">        
-        <goals>0</goals>
-      </team>
-      <team name="Dorados">        
-        <goals></goals>
-      </team>
+      <team name="Toluca" goals="0"/>
+      <team name="Dorados" goals="0"/>
       <winner></winner>
       <expected>Toluca</expected>
     </game>
     <game>
-      <team name="Chivas">        
-        <goals>0</goals>
-      </team>
-      <team name="America">        
-        <goals>0</goals>
-      </team>
+      <team name="Chivas" goals="0"/>
+      <team name="America" goals="0"/>
       <winner></winner>
       <expected>America</expected>
     </game>
