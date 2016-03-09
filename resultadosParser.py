@@ -23,11 +23,21 @@ def viewResults():
                     expected = game.find('expected').text
                     print g + ' Expected ->\t' + expected
 
+def viewTeam(team_name):
+    for w in week:
+        for game in w.findall('game'):
+            for team in game.findall('team'):
+                name = team.get('name')
+                if name == team_name:
+                    return team
+
 alen = len(sys.argv)
 if alen == 2:
     if sys.argv[1] == '-m': # If user wants to modify the xml
-        team = raw_input('What team would you like to modify? ')
+        team = raw_input('What team would you like to modify? ')        
         print (team + ' has been modified ')
+        t = viewTeam(team)
+        print team + ' ' + t.get('goals')
 
     else:
         jornada = 'jornada' + sys.argv[1]
