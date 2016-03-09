@@ -1,8 +1,15 @@
+import sys
 import xml.etree.ElementTree as ET
 tree = ET.parse('resultados.xml')
 root = tree.getroot()
 
-for child in root.findall('jornada10'):
+#User picks the week they want to view
+# else display first week
+jornada = 'jornada9'
+if len(sys.argv) > 1:
+    jornada = 'jornada' + sys.argv[1]
+    
+for child in root.findall(jornada):
     for game in child.findall('game'):
         g = ''
         for team in game.findall('team'):
