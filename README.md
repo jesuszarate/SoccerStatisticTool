@@ -1,6 +1,6 @@
 # SoccerStatisticTool
-
-HOW TO RUN:
+=====================
+###HOW TO RUN:
 To modify the results add flag -m followed by week to modify: 
 python resultadosParser.py -m 10
 
