@@ -9,7 +9,7 @@ python weeklyResults.py -m -g 10
 
 To modify the game's expected team to win the game add flag -m and flag -e (expected) followed by week to modify: 
 ```
-python weeklyResults.py -m -g 10
+python weeklyResults.py -m -e 10
 ```
 
 To view the whole week's results specify the week number:
