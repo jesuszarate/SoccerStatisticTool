@@ -39,11 +39,11 @@ def viewResults():
                 goals = team.get('goals')
                 name = team.get('name')
                 if g == '':
-                    g += str(name) + ' ' + str(goals) + ' vs '
+                    g += str(goals) + ' ' + str(name) + '\t vs \t'
                 else:
-                    g += str(name) + ' ' + str(goals)
+                    g += str(goals) + ' ' + str(name)
                     expected = game.find('expected').text
-                    print g + ' Expected ->\t' + expected
+                    print (g + '\tExpected ->\t' + expected).expandtabs(20)
 
 def viewTeam(team_name):
     for w in week:
@@ -70,41 +70,52 @@ def getTeamList():
         list += team + ' -> ' + Teams[team] + '\n'
     return list
 
+def changeTeamGoals(jornada):
+    global week
+    week = root.findall(jornada)
+    
+    team_list = getTeamList()
+
+    while True:
+        team = raw_input(team_list + '\n To stop: STOP\n'+ 'What team would you like to modify? ')
+                
+        if team == 'STOP':
+            break
+                    
+        if team in Teams:
+            goals = raw_input('How many Goals:  ')
+            team_name = Teams[team]
+            updateTeamGoals(team_name, goals)
+            print (team + ' has been modified ')
+            #import pdb; pdb.set_trace()
+            t = viewTeam(team_name)
+            print team_name + ' ' + t.get('goals')
+        else:
+            print '\n********Invalid team name, try again*********\n'
+            continue
+
+    writeToFile()
+
 alen = len(sys.argv)
-if alen == 1:
-    message = 'To modify the results add flag -m followed by weed to modify: python resultadosParser.py -m 10\n'
-    message += 'To view the whole week\'s results specify the week number: python resultadosParser.py 10'
-    print message
     
 if alen == 2:
     jornada = 'jornada' + sys.argv[1]
     week = root.findall(jornada)
     viewResults()
 
-if alen == 3:
+elif alen == 4:
     if sys.argv[1] == '-m': # If user wants to modify the xml
-        jornada = 'jornada' + sys.argv[2]
-        week = root.findall(jornada)
-        
-        team_list = getTeamList()
+        if sys.argv[2] == '-g': # If user wants to modify goals
+            jornada = 'jornada' + sys.argv[3]
+            changeTeamGoals(jornada)
+        elif sys.argv[2] == '-e':
+            print 'hi'
 
-        while True:
-            team = raw_input(team_list + '\n To stop: STOP\n'+ 'What team would you like to modify? ')
-            
-            if team == 'STOP':
-                break
+else:
+    message = 'To modify the results add flag -m followed by weed to modify: python resultadosParser.py -m 10\n'
+    message += 'To view the whole week\'s results specify the week number: python resultadosParser.py 10'
+    print message
 
-            goals = raw_input('How many Goals:  ')
-            if team in Teams:
-                team_name = Teams[team]
-                updateTeamGoals(team_name, goals)
-                print (team + ' has been modified ')        
-                t = viewTeam(team_name)
-                print team + ' ' + t.get('goals')
-
-        writeToFile()
-
-#elif alen == 2:
     
     
     

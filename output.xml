@@ -43,26 +43,26 @@
   </jornada9>
   <jornada10>
     <game>
-      <team goals="5" name="Veracruz" />
-      <team goals="4" name="Atlas" />
+      <team goals="3" name="Veracruz" />
+      <team goals="2" name="Atlas" />
       <winner />
       <expected>Atlas</expected>
     </game>
     <game>
-      <team goals="0" name="Santos" />
-      <team goals="3" name="Pachuca" />
+      <team goals="3" name="Santos" />
+      <team goals="2" name="Pachuca" />
       <winner />
       <expected>Santos</expected>
     </game>
     <game>
-      <team goals="2" name="Cruz Azul" />
-      <team goals="1" name="Puebla" />
+      <team goals="1" name="Cruz Azul" />
+      <team goals="0" name="Puebla" />
       <winner />
       <expected>Cruz Azul</expected>
     </game>
     <game>
-      <team goals="1" name="Tigres" />
-      <team goals="3" name="Pumas UNAM" />
+      <team goals="0" name="Tigres" />
+      <team goals="0" name="Pumas UNAM" />
       <winner />
       <expected>Tigres</expected>
     </game>
