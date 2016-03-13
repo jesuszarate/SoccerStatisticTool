@@ -29,7 +29,6 @@ Teams = {
 'Am':'America'}
 
 def viewResults():
-    #for w in week:
     for game in week.findall('game'):
         g = ''
         for team in game.findall('team'):
@@ -58,6 +57,13 @@ def updateTeamGoals(team_name, goals):
                 if name == team_name:                    
                     team.set('goals', goals)
 
+def updateMatchExpected(match, expected):
+    for w in week:
+        for game in w.iter('game'):
+            if game.get('number') == match:
+                ex = game.find('expected')
+                ex.text = expected
+
 def writeToFile():
     tree.write('output.xml')
 
@@ -75,7 +81,7 @@ def setWeek(jornada):
 
 def changeTeamGoals(jornada):
     global week
-    week = setWeek(jornada)#root.findall(jornada)
+    week = setWeek(jornada)
     
     team_list = getTeamList()
 
@@ -90,7 +96,6 @@ def changeTeamGoals(jornada):
             team_name = Teams[team]
             updateTeamGoals(team_name, goals)
             print (team + ' has been modified ')
-            #import pdb; pdb.set_trace()
             t = viewTeam(team_name)
             print team_name + ' ' + t.get('goals')
         else:
@@ -99,46 +104,40 @@ def changeTeamGoals(jornada):
 
     writeToFile()
 
-'''
-NOT DONE WITH THIS YET
-'''
-def getWeekMatches():
-    matches = []
-    for w in week:
-        for game in w.findall('game'):
-            g = ''
-            for team in game.findall('team'):
-                goals = team.get('goals')
-                name = team.get('name')
-                if g == '':
-                    g += str(goals) + ' ' + str(name) + '\t vs \t'
-                else:
-                    g += str(goals) + ' ' + str(name)                    
-                    expected = game.find('expected').text
-                    print (g + '\tExpected ->\t' + expected).expandtabs(20)
-
+def getWeekMatches(game_num):
+    matches = ''
+    for game in week.findall('game'):
+        g = ''
+        for team in game.findall('team'):
+            goals = team.get('goals')
+            name = team.get('name')
+            if g == '':
+                g += str(goals) + ' ' + str(name) + '\t vs \t'
+            else:
+                g += str(goals) + ' ' + str(name)                    
+                expected = game.find('expected').text
+                matches += game.get('number')+'\t' + g + '\n'
+    return matches
 
 def changeGameExpected(jornada):
     global week
-    week = root.findall(jornada)
-    
-    team_list = getTeamList()
+    week = setWeek(jornada)#root.findall(jornada)
+
+    team_list = getWeekMatches(jornada)
 
     while True:
-        team = raw_input(team_list + '\n To stop: STOP\n'+ 'What team would you like to modify? ')
-                
-        if team == 'STOP':
+        match = raw_input(team_list + '\n To stop: STOP\n'+ 'What match would you like to modify? ')
+        
+        if match == 'STOP':
             break
                     
-        if team in Teams:
-            goals = raw_input('How many Goals:  ')
-            team_name = Teams[team]
-            updateTeamGoals(team_name, goals)
-            print (team + ' has been modified ')
-            t = viewTeam(team_name)
-            print team_name + ' ' + t.get('goals')
+        # Check that it's an integer
+        if int(match) <= 9:
+            expected = raw_input('What team do you expect to win the match:  ')
+            updateMatchExpected(match, expected)
+            print ('Match' + match + ' has been modified ')
         else:
-            print '\n********Invalid team name, try again*********\n'
+            print '\n********Invalid match number, try again*********\n'
             continue
 
     writeToFile()
@@ -148,8 +147,7 @@ alen = len(sys.argv)
 if alen == 2:
     global week
     jornada =  sys.argv[1]
-    week = setWeek(jornada)#root.findall(jornada)
-    import pdb; pdb.set_trace()
+    week = setWeek(jornada)
     viewResults()
 
 elif alen == 4:
@@ -158,7 +156,8 @@ elif alen == 4:
             jornada = sys.argv[3]
             changeTeamGoals(jornada)
         elif sys.argv[2] == '-e':
-            print 'hi'
+            jornada = sys.argv[3]
+            changeGameExpected(jornada)
 
 else:
     message = 'To modify the results add flag -m followed by weed to modify: python resultadosParser.py -m 10\n'
