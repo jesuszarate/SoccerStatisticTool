@@ -132,13 +132,17 @@ def changeGameExpected(jornada):
             break
                     
         # Check that it's an integer
-        if int(match) <= 9:
-            expected = raw_input('What team do you expect to win the match:  ')
-            updateMatchExpected(match, expected)
-            print ('Match' + match + ' has been modified ')
-        else:
-            print '\n********Invalid match number, try again*********\n'
-            continue
+        try:
+            if int(match) > 0 and int(match) <= 9:
+                expected = raw_input('What team do you expect to win the match:  ')
+                updateMatchExpected(match, expected)
+                print ('Match' + match + ' has been modified ')
+            else:
+                print '\n********Invalid match number, try again*********\n'
+                continue
+        except:
+                print '\n********Invalid match number, try again*********\n'
+                continue
 
     writeToFile()
 
