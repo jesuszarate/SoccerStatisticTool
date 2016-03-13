@@ -4,9 +4,6 @@ import xml.etree.ElementTree as ET
 tree = ET.parse('output.xml')
 root = tree.getroot()
 
-jornada = 'jornada9'
-week = root.findall(jornada)
-
 #User picks the week they want to view
 # else display first week
 
@@ -32,26 +29,26 @@ Teams = {
 'Am':'America'}
 
 def viewResults():
-    for w in week:
-        for game in w.findall('game'):
-            g = ''
-            for team in game.findall('team'):
-                goals = team.get('goals')
-                name = team.get('name')
-                if g == '':
-                    g += str(goals) + ' ' + str(name) + '\t vs \t'
-                else:
-                    g += str(goals) + ' ' + str(name)
-                    expected = game.find('expected').text
-                    print (g + '\tExpected ->\t' + expected).expandtabs(20)
+    #for w in week:
+    for game in week.findall('game'):
+        g = ''
+        for team in game.findall('team'):
+            goals = team.get('goals')
+            name = team.get('name')
+            if g == '':
+                g += str(goals) + ' ' + str(name) + '\t vs \t'
+            else:
+                g += str(goals) + ' ' + str(name)
+                expected = game.find('expected').text
+                print (g + '\tExpected ->\t' + expected).expandtabs(20)
 
 def viewTeam(team_name):
-    for w in week:
-        for game in w.findall('game'):
-            for team in game.findall('team'):
-                name = team.get('name')
-                if name == team_name:
-                    return team
+    
+    for game in week.findall('game'):
+        for team in game.findall('team'):
+            name = team.get('name')
+            if name == team_name:
+                return team
 
 def updateTeamGoals(team_name, goals):
     for w in week:
@@ -70,9 +67,15 @@ def getTeamList():
         list += team + ' -> ' + Teams[team] + '\n'
     return list
 
+def setWeek(jornada):
+    for j in root.findall('jornada'):
+        if jornada == j.get('number'):
+            return j
+
+
 def changeTeamGoals(jornada):
     global week
-    week = root.findall(jornada)
+    week = setWeek(jornada)#root.findall(jornada)
     
     team_list = getTeamList()
 
@@ -96,17 +99,63 @@ def changeTeamGoals(jornada):
 
     writeToFile()
 
-alen = len(sys.argv)
-    
-if alen == 2:
-    jornada = 'jornada' + sys.argv[1]
+'''
+NOT DONE WITH THIS YET
+'''
+def getWeekMatches():
+    matches = []
+    for w in week:
+        for game in w.findall('game'):
+            g = ''
+            for team in game.findall('team'):
+                goals = team.get('goals')
+                name = team.get('name')
+                if g == '':
+                    g += str(goals) + ' ' + str(name) + '\t vs \t'
+                else:
+                    g += str(goals) + ' ' + str(name)                    
+                    expected = game.find('expected').text
+                    print (g + '\tExpected ->\t' + expected).expandtabs(20)
+
+
+def changeGameExpected(jornada):
+    global week
     week = root.findall(jornada)
+    
+    team_list = getTeamList()
+
+    while True:
+        team = raw_input(team_list + '\n To stop: STOP\n'+ 'What team would you like to modify? ')
+                
+        if team == 'STOP':
+            break
+                    
+        if team in Teams:
+            goals = raw_input('How many Goals:  ')
+            team_name = Teams[team]
+            updateTeamGoals(team_name, goals)
+            print (team + ' has been modified ')
+            t = viewTeam(team_name)
+            print team_name + ' ' + t.get('goals')
+        else:
+            print '\n********Invalid team name, try again*********\n'
+            continue
+
+    writeToFile()
+
+alen = len(sys.argv)
+
+if alen == 2:
+    global week
+    jornada =  sys.argv[1]
+    week = setWeek(jornada)#root.findall(jornada)
+    import pdb; pdb.set_trace()
     viewResults()
 
 elif alen == 4:
     if sys.argv[1] == '-m': # If user wants to modify the xml
         if sys.argv[2] == '-g': # If user wants to modify goals
-            jornada = 'jornada' + sys.argv[3]
+            jornada = sys.argv[3]
             changeTeamGoals(jornada)
         elif sys.argv[2] == '-e':
             print 'hi'
