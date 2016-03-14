@@ -119,6 +119,19 @@ def getWeekMatches(game_num):
                 matches += game.get('number')+'\t' + g + '\n'
     return matches
 
+def getWeekMatchesDict(game_num):
+    global week
+    week = setWeek(game_num)
+    matches = []
+    import pdb; pdb.set_trace()
+    for game in week.findall('game'):
+        match = []
+        for team in game.findall('team'):
+            name = team.get('name')
+            match.append(name)
+        matches.append(match)
+    return matches
+
 def changeGameExpected(jornada):
     global week
     week = setWeek(jornada)#root.findall(jornada)
@@ -145,6 +158,13 @@ def changeGameExpected(jornada):
                 continue
 
     writeToFile()
+
+def addNewWeek():
+    
+    week_num = raw_input('What\'s the week number')
+    jornada = ET.Element('jornada')
+    #while True:
+        
 
 alen = len(sys.argv)
 
