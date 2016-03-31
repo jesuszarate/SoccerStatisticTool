@@ -82,25 +82,25 @@ JORNADA 11
 18	Dorados 	11	2	1	8	11	24	-13	7	GPEGP
 
 JORNADA 11
-	GRUPO 1		PJ	G	E	P	GF	GC	DIF	PTS
-1	Monterrey	11	8	0	3	21	14	+7	24	PGGPG
-2	Pachuca		11	6	3	2	26	12	+14	21	GPEGP
-3	America		11	6	3	2	22	15	+7	21	GGGPE
-4	León		11	6	1	4	20	14	+6	19	PGEPG
-5	Cruz Azul	11	4	6	1	22	15	+7	18	GEEGE
-6	Santos		11	5	2	4	15	15	0	17	PGGEE
-7	U.A.N.L		11	4	4	3	17	11	+6	16	EEPGE
-8	Tijuana		11	3	7	1	12	11	+1	16	EGEEE
-9	Pumas UNAM	11	3	6	2	15	13	+2	15	GEEEE
-10	Puebla		11	3	6	2	15	15	0	15	EEEEG
-11	Morelia		11	3	4	4	15	19	-4	13	GPPPE
-12	Guadalajara	11	2	6	3	14	14	0	12	GPGEE
-13	Chiapas		11	3	3	5	13	16	-3	12	PEPGG
-14	Toluca		11	2	5	4	13	16	-3	11	EGPPP
-15	Querétaro	11	2	3	6	11	17	-6	9	EPPEE
-16	Veracruz	11	1	6	4	13	25	-12	9	PGEEP
-17	Atlas		11	2	2	7	11	20	-9	8	PPPPG
-18	Dorados 	11	2	1	8	11	24	-13	7	GPEGP
+	GRUPO 1		PJ	G	E	P	GF	GC	DIF	PTS	Racha	Sums			Probability
+1	Monterrey	11	8	0	3	21	14	+7	24	PGGPG	P = 2, E = 0, G = 3	-1
+2	Pachuca		11	6	3	2	26	12	+14	21	GPEGP	P = 2, E = 1, G = 2	-1.8
+3	America		11	6	3	2	22	15	+7	21	GGGPE	P = 1, E = 1, G = 3	 1.2
+4	León		11	6	1	4	20	14	+6	19	PGEPG	P = 2, E = 1, G = 2	-1.8
+5	Cruz Azul	11	4	6	1	22	15	+7	18	GEEGE	P = 0, E = 3, G = 2	 2.6
+6	Santos		11	5	2	4	15	15	0	17	PGGEE	P = 1, E = 2, G = 2	 0.4	
+7	U.A.N.L		11	4	4	3	17	11	+6	16	EEPGE	P = 1, E = 3, G = 1	-0.4
+8	Tijuana		11	3	7	1	12	11	+1	16	EGEEE	P = 0, E = 4, G = 1	 1.8
+9	Pumas UNAM	11	3	6	2	15	13	+2	15	GEEEE	P = 0, E = 4, G = 1	 1.8
+10	Puebla		11	3	6	2	15	15	0	15	EEEEG	P = 0, E = 4, G = 1	 1.8
+11	Morelia		11	3	4	4	15	19	-4	13	GPPPE	P = 3, E = 1, G = 1	-4.8
+12	Guadalajara	11	2	6	3	14	14	0	12	GPGEE	P = 1, E = 2, G = 2	 0.4
+13	Chiapas		11	3	3	5	13	16	-3	12	PEPGG	P = 2, E = 1, G = 2	-1.8
+14	Toluca		11	2	5	4	13	16	-3	11	EGPPP	P = 3, E = 1, G = 1	-4.8
+15	Querétaro	11	2	3	6	11	17	-6	9	EPPEE	P = 2, E = 3, G = 0	-3.4
+16	Veracruz	11	1	6	4	13	25	-12	9	PGEEP	P = 2, E = 2, G = 1	-2.6
+17	Atlas		11	2	2	7	11	20	-9	8	PPPPG	P = 4, E = 0, G = 1	-7.0
+18	Dorados 	11	2	1	8	11	24	-13	7	GPEGP	P = 2, E = 1, G = 2	-1.8
 
 
 
