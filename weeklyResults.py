@@ -164,7 +164,19 @@ def addNewWeek():
     week_num = raw_input('What\'s the week number')
     jornada = ET.Element('jornada')
     #while True:
-        
+
+'''
+*
+* Compute the probabitlity based on the previous played games
+*
+'''        
+pierde = -2
+empata = 0.2
+gana = 1
+#Assume a tuple (p, e, g)                                                                                                                    
+def compute(t):
+    return (pierde * t[0]) + (empata * t[1]) + (gana * t[2])
+
 
 alen = len(sys.argv)
 
