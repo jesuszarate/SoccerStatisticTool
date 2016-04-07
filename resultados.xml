@@ -1,102 +1,154 @@
 <?xml version="1.0"?>
 <Torneo>
   <jornada9>
-    <game>
+    <game expected="draw" correct="false">
       <team name="Tijuana" goals="0"/>
       <team name="Leon" goals="0"/>
-      <expected>draw</expected>
     </game>
-    <game> 
+    <game expected="draw" correct="false">
       <team name="Pumas UNAM" goals="0"/>
       <team name="Cruz Azul" goals="0"/>
-      <expected>draw</expected>
     </game>
-    <game>
-      <team name="America" goals="0"/>
+    <game expected="America" correct="false">
+      <team name="Amcted" goals="0"/>
       <team name="Monarcas" goals="0"/>
-      <expected>America</expected>
     </game>
-    <game>
+    <game expected="Chivas" correct="false">
       <team name="Queretaro" goals="0"/>
       <team name="Chivas" goals="0"/>
-      <expected>Chivas</expected>
     </game>
-    <game>
+    <game expected="Monterrey" correct="false">
       <team name="Monterrey" goals="0"/>
       <team name="Tigres" goals="0"/>
-      <expected>Monterrey</expected>
     </game>
-    <game>
+    <game expected="draw" correct="false">
       <team name="Pachuca" goals="0"/>
       <team name="Dorados" goals="0"/>
-      <expected>draw</expected>
     </game>
-    <game>
+    <game expected="Santos Laguna" correct="false">
       <team name="Atlas" goals="0"/>
       <team name="Santos Laguna" goals="0"/>
-      <expected>Santos Laguna</expected>
     </game>
-    <game>
+    <game expected="Jaguares" correct="false">
       <team name="Jaguares" goals="0"/>
       <team name="Toluca" goals="0"/>
-      <expected>Jaguares</expected>
     </game>
   </jornada9>
   <jornada10>
-    <game>
-      <team name="Veracruz" goals="0"/>
-      <team name="Atlas" goals="0"/>
-      <winner>Veracruz</winner>
-      <expected>Atlas</expected>
+    <game expected="Atlas" correct="false">
+      <team name="Veracruz" goals="3"/>
+      <team name="Atlas" goals="2"/>
     </game>
-    <game>
-      <team name="Santos" goals="0"/>
-      <team name="Pachuca" goals="0"/>
-      <winner>Santos</winner>
-      <expected>Santos</expected>
+    <game expected="Santos" correct="false">
+      <team name="Santos" goals="3"/>
+      <team name="Pachuca" goals="2"/>
     </game>
-    <game>
-      <team name="Cruz Azul" goals="0"/>
-      <team name="Puebla" goals="0"/>
-      <winner>Draw</winner>
-      <expected>Cruz Azul</expected>
+    <game expected="Cruz Azul" correct="false">
+      <team name="Cruz Azul" goals="1"/>
+      <team name="Puebla" goals="1"/>
     </game>
-    <game>
+    <game expected="Tigres" correct="false">
       <team name="Tigres" goals="0"/>
       <team name="Pumas UNAM" goals="0"/>
-      <winner>Draw</winner>
-      <expected>Tigres</expected>
     </game>
-    <game>
-      <team name="Leon" goals="0"/>
+    <game expected="Leon" correct="false">
+      <team name="Leon" goals="2"/>
       <team name="Queretaro" goals="0"/>
-      <winner>Leon</winner>
-      <expected>Leon</expected>
     </game>
-    <game>
-      <team name="Morelia" goals="0"/>
-      <team name="Monterrey" goals="0"/>
-      <winner>Monterrey</winner>
-      <expected>Monterrey</expected>
+    <game expected="Monterrey" correct="false"> 
+      <team name="Morelia" goals="1"/>
+      <team name="Monterrey" goals="3"/>
     </game>
-    <game>
-      <team name="Jaguares" goals="0"/>
-      <team name="Tijuana" goals="0"/>
-      <winner>Tijuana</winner>
-      <expected>Tijuana</expected>
+    <game expected="Tijuana" correct="false">
+      <team name="Jaguares" goals="1"/>
+      <team name="Tijuana" goals="2"/>
     </game>
-    <game>
-      <team name="Toluca" goals="0"/>
+    <game expected="Toluca" correct="false">
+      <team name="Toluca" goals="3"/>
       <team name="Dorados" goals="0"/>
-      <winner>Toluca</winner>
-      <expected>Toluca</expected>
     </game>
-    <game>
-      <team name="Chivas" goals="0"/>
-      <team name="America" goals="0"/>
-      <winner>America</winner>
-      <expected>America</expected>
+    <game expected="America" correct="false">
+      <team name="Chivas" goals="1"/>
+      <team name="America" goals="2"/>
     </game>
   </jornada10>
+ <jornada11>
+    <game expected="draw" correct="false" winner="">
+      <team name="Jaguares" goals="1"/>
+      <team name="Queretaro" goals="1"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Tijuana" goals="2"/>
+      <team name="Toluca" goals="0"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="America" goals="0"/>
+      <team name="Leon" goals="0"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Monterrey" goals="1"/>
+      <team name="Chivas" goals="3"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Pachuca" goals="6"/>
+      <team name="Veracruz" goals="0"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Atlas" goals="0"/>
+      <team name="Cruz Azul" goals="2"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Dorados" goals="3"/>
+      <team name="Santos" goals="1"/>
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Puebla" goals="0"/>
+      <team name="Tigres" goals="0"/> 
+    </game>
+    <game expected="draw" correct="false" winner="">
+      <team name="Pumas UNAM" goals="4"/>
+      <team name="Morelia" goals="2"/>
+    </game>
+  </jornada11>
+
+ <jornada12>
+    <game expected="Santos" correct="false">
+      <team name="Santos" goals="0"/>
+      <team name="Toluca" goals="0"/>
+    </game>
+    <game expected="Tijuana" correct="false">
+      <team name="Queretaro" goals="4"/>
+      <team name="Tijuana" goals="2"/>
+    </game>
+    <game expected="draw" correct="true">
+      <team name="Dorados" goals="0"/>
+      <team name="Veracruz" goals="0"/>
+    </game>
+    <game expected="draw" correct="false">
+      <team name="Pachuca" goals="0"/>
+      <team name="Cruz Azul" goals="0"/>
+    </game>
+    <game expected="Tigres" correct="false">
+      <team name="Atlas" goals="0"/>
+      <team name="Tigres" goals="0"/> 
+    </game>
+    <game expected="draw" correct="false">
+      <team name="Leon" goals="0"/>
+      <team name="Monterrey" goals="0"/>
+    </game>
+    <game expected="Morelia" correct="false">
+      <team name="Puebla" goals="0"/>
+      <team name="Morelia" goals="0"/>
+    </game>
+    <game expected="America" correct="false">
+      <team name="America" goals="0"/>
+      <team name="Jaguares" goals="0"/>
+    </game>
+    <game expected="Pumas UNAM" correct="false">
+      <team name="Pumas UNAM" goals="0"/>
+      <team name="Chivas" goals="0"/>
+    </game>
+  </jornada12>
+
 </Torneo>
 

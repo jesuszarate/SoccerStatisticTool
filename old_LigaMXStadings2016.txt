@@ -81,7 +81,7 @@ JORNADA 11
 17	Atlas		11	2	2	7	11	20	-9	8	PPPPG
 18	Dorados 	11	2	1	8	11	24	-13	7	GPEGP
 
-JORNADA 11
+JORNADA 11 Cont.
 	GRUPO 1		PJ	G	E	P	GF	GC	DIF	PTS	Racha	Sums			Probability
 1	Monterrey	11	8	0	3	21	14	+7	24	PGGPG	P = 2, E = 0, G = 3	-1
 2	Pachuca		11	6	3	2	26	12	+14	21	GPEGP	P = 2, E = 1, G = 2	-1.8
@@ -102,6 +102,65 @@ JORNADA 11
 17	Atlas		11	2	2	7	11	20	-9	8	PPPPG	P = 4, E = 0, G = 1	-7.0
 18	Dorados 	11	2	1	8	11	24	-13	7	GPEGP	P = 2, E = 1, G = 2	-1.8
 
+	Racha		Sums			Probability
+1	Monterrey	PGGPG	P = 2, E = 0, G = 3	-1
+2	Pachuca		GPEGP	P = 2, E = 1, G = 2	-1.8
+3	America		GGGPE	P = 1, E = 1, G = 3	 1.2
+4	León		PGEPG	P = 2, E = 1, G = 2	-1.8
+5	Cruz Azul	GEEGE	P = 0, E = 3, G = 2	 2.6
+6	Santos 		PGGEE	P = 1, E = 2, G = 2	 0.4	
+7	U.A.N.L		EEPGE	P = 1, E = 3, G = 1	-0.4
+8	Tijuana 	EGEEE	P = 0, E = 4, G = 1	 1.8
+9	Pumas UNAM	GEEEE	P = 0, E = 4, G = 1	 1.8
+10	Puebla 		EEEEG	P = 0, E = 4, G = 1	 1.8
+11	Morelia 	GPPPE	P = 3, E = 1, G = 1	-4.8
+12	Guadalajara 	GPGEE	P = 1, E = 2, G = 2	 0.4
+13	Chiapas 	PEPGG	P = 2, E = 1, G = 2	-1.8
+14	Toluca 		EGPPP	P = 3, E = 1, G = 1	-4.8
+15	Querétaro 	EPPEE	P = 2, E = 3, G = 0	-3.4
+16	Veracruz 	PGEEP	P = 2, E = 2, G = 1	-2.6
+17	Atlas 		PPPPG	P = 4, E = 0, G = 1	-7.0
+18	Dorados 	GPEGP	P = 2, E = 1, G = 2	-1.8
+
+JORNADA 12
+	GRUPO 1		PJ	G	E	P	GF	GC	DIF	PTS
+1	Monterrey	12	9	0	3	23	15	+8	27
+2	America		12	7	3	2	24	15	+9	24
+3	Pachuca		12	6	4	2	26	12	+14	22
+4	Cruz Azul	12	4	7	1	22	15	+7	19
+5	León		12	6	1	5	21	16	+5	19
+6	Santos		12	5	3	4	15	15	0	18
+7	U.A.N.L		12	4	5	3	19	13	+6	17
+8	Tijuana		12	3	7	2	14	15	-1	16
+9	Morelia		12	4	4	4	17	19	-2	16
+10	Guadalajara	12	3	6	3	18	14	+4	15
+11	Puebla		12	3	6	3	15	17	-2	15
+12	Pumas UNAM	12	3	6	3	15	17	-2	15
+13	Toluca		12	2	6	4	13	16	-3	12
+14	Querétaro	12	3	3	6	15	19	-4	12
+15	Chiapas		12	3	3	6	13	18	-5	12
+16	Veracruz	12	1	7	4	13	25	-12	10
+17	Atlas		12	2	3	7	13	22	-9	9
+18	Dorados		12	2	2	8	11	24	-13	8
 
 
+	Racha		Sums			Probability
+1	Monterrey	GPGGPG	P = 2, E = 0, G = 3	-1.0 + 1.0 = +0.0
+2	Pachuca		EGPEGP	P = 2, E = 1, G = 2	-1.8 + 0.2 = -1.6
+3	America		GGGGPE	P = 1, E = 1, G = 3	 1.2 + 1.0 = +2.2
+4	León		PPGEPG	P = 2, E = 1, G = 2	-1.8 - 2.0 = -3.8
+5	Cruz Azul	EGEEGE	P = 0, E = 3, G = 2	 2.6 + 0.2 = +2.8
+6	Santos 		EPGGEE	P = 1, E = 2, G = 2	 0.4 + 0.2 = +0.6	
+7	U.A.N.L		EEEPGE	P = 1, E = 3, G = 1	-0.4 + 0.2 = -0.2
+8	Tijuana 	PEGEEE	P = 0, E = 4, G = 1	 1.8 - 2.0 = -0.2
+9	Pumas UNAM	PGEEEE	P = 0, E = 4, G = 1	 1.8 - 2.0 = -0.2
+10	Puebla 		PEEEEG	P = 0, E = 4, G = 1	 1.8 - 2.0 = -0.2
+11	Morelia 	GGPPPE	P = 3, E = 1, G = 1	-4.8 + 1.0 = -3.8
+12	Guadalajara 	GGPGEE	P = 1, E = 2, G = 2	 0.4 + 1.0 = +1.4
+13	Chiapas 	PPEPGG	P = 2, E = 1, G = 2	-1.8 - 2.0 = -3.8
+14	Toluca 		EEGPPP	P = 3, E = 1, G = 1	-4.8 + 0.2 = -4.6
+15	Querétaro 	GEPPEE	P = 2, E = 3, G = 0	-3.4 + 1.0 = -2.4
+16	Veracruz 	EPGEEP	P = 2, E = 2, G = 1	-2.6 + 0.2 = -2.4
+17	Atlas 		EPPPPG	P = 4, E = 0, G = 1	-7.0 + 0.2 = -6.8
+18	Dorados 	EGPEGP	P = 2, E = 1, G = 2	-1.8 + 0.2 = -1.6
 
