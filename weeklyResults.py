@@ -180,11 +180,19 @@ def compute(t):
 
 alen = len(sys.argv)
 
+print alen
 if alen == 2:
     global week
     jornada =  sys.argv[1]
     week = setWeek(jornada)
-    viewResults()
+    #Fix me
+    #viewResults()
+
+
+elif alen == 5:
+    if sys.argv[1] == '-comp':        
+        print "computing..."    
+        print compute((float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])))
 
 elif alen == 4:
     if sys.argv[1] == '-m': # If user wants to modify the xml
