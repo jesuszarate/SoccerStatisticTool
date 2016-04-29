@@ -231,24 +231,24 @@ JORNADA 16
 18	Chiapas		16	3	3	10	15	31	-16	12
 
 			Racha	Sums all		Probability			Sum 5
-1	Monterrey	GGPGGPG	P = 2, E = 0, G = 4	
-2	Pachuca		GEGPEGP	P = 2, E = 1, G = 3	
-3	America		GGGGGPE	P = 1, E = 1, G = 4	
-4	León		GPPGEPG	P = 2, E = 1, G = 3	
-5	Cruz Azul	PEGEEGE	P = 1, E = 3, G = 2	
-6	Santos 		GEPGGEE	P = 1, E = 2, G = 3	
-7	U.A.N.L		PEEEPGE	P = 2, E = 3, G = 1	
-8	Tijuana 	PPEGEEE	P = 1, E = 4, G = 1	
-9	Pumas UNAM	PPGEEEE	P = 1, E = 4, G = 1	
-10	Puebla 		PPEEEEG	P = 1, E = 4, G = 1	
-11	Morelia 	GGGPPPE	P = 3, E = 1, G = 2	
-12	Guadalajara 	GGGPGEE	P = 1, E = 2, G = 3	
-13	Chiapas 	PPPEPGG	P = 3, E = 1, G = 2	
-14	Toluca 		EEEGPPP	P = 3, E = 2, G = 1	
-15	Querétaro 	EGEPPEE	P = 2, E = 4, G = 0	
-16	Veracruz 	PEPGEEP	P = 3, E = 2, G = 1	
-17	Atlas 		PEPPPPG	P = 5, E = 1, G = 1	
-18	Dorados 	GEGPEGP	P = 2, E = 2, G = 3	
+1	Monterrey	EGGGG	P = 2, E = 0, G = 4	
+2	Pachuca		EEPGE	P = 2, E = 1, G = 3	
+3	America		EPPGG	P = 1, E = 1, G = 4	
+4	León		EEGGP	P = 2, E = 1, G = 3	
+5	Cruz Azul	GPPPE	P = 1, E = 3, G = 2	
+6	Santos 		PGGGE	P = 1, E = 2, G = 3	
+7	U.A.N.L		EPGPE	P = 2, E = 3, G = 1	
+8	Tijuana 	EPPPP	P = 1, E = 4, G = 1	
+9	Pumas UNAM	PGGPP	P = 1, E = 4, G = 1	
+10	Puebla 		EGPPP	P = 1, E = 4, G = 1	
+11	Morelia 	GPGGG	P = 3, E = 1, G = 2	
+12	Guadalajara 	GEGGG	P = 1, E = 2, G = 3	
+13	Chiapas 	PPPPP	P = 3, E = 1, G = 2	
+14	Toluca 		PGGEE	P = 3, E = 2, G = 1	
+15	Querétaro 	GPGEG	P = 2, E = 4, G = 0	
+16	Veracruz 	EGPPE	P = 3, E = 2, G = 1	
+17	Atlas 		GEPPE	P = 5, E = 1, G = 1	
+18	Dorados 	PGPGE	P = 2, E = 2, G = 3	
 
 
 
