@@ -231,24 +231,25 @@ JORNADA 16
 18	Chiapas		16	3	3	10	15	31	-16	12
 
 			Racha	Sums all		Probability			Sum 5
-1	Monterrey	EGGGG	P = 2, E = 0, G = 4	
-2	Pachuca		EEPGE	P = 2, E = 1, G = 3	
-3	America		EPPGG	P = 1, E = 1, G = 4	
-4	León		EEGGP	P = 2, E = 1, G = 3	
-5	Cruz Azul	GPPPE	P = 1, E = 3, G = 2	
-6	Santos 		PGGGE	P = 1, E = 2, G = 3	
-7	U.A.N.L		EPGPE	P = 2, E = 3, G = 1	
-8	Tijuana 	EPPPP	P = 1, E = 4, G = 1	
-9	Pumas UNAM	PGGPP	P = 1, E = 4, G = 1	
-10	Puebla 		EGPPP	P = 1, E = 4, G = 1	
-11	Morelia 	GPGGG	P = 3, E = 1, G = 2	
-12	Guadalajara 	GEGGG	P = 1, E = 2, G = 3	
-13	Chiapas 	PPPPP	P = 3, E = 1, G = 2	
-14	Toluca 		PGGEE	P = 3, E = 2, G = 1	
-15	Querétaro 	GPGEG	P = 2, E = 4, G = 0	
-16	Veracruz 	EGPPE	P = 3, E = 2, G = 1	
-17	Atlas 		GEPPE	P = 5, E = 1, G = 1	
+1	Monterrey	EGGGG	P = 0, E = 1, G = 4	
+2	Pachuca		EEPGE	P = 1, E = 3, G = 3	
+3	America		EPPGG	P = 2, E = 1, G = 4	
+4	León		EEGGP	P = 1, E = 2, G = 3	
+5	Cruz Azul	GPPPE	P = 3, E = 1, G = 2	
+6	Santos 		PGGGE	P = 1, E = 1, G = 3	
+7	U.A.N.L		EPGPE	P = 2, E = 2, G = 1	
+8	Tijuana 	EPPPP	P = 4, E = 1, G = 1	
+9	Pumas UNAM	PGGPP	P = 1, E = 0, G = 1	
+10	Puebla 		EGPPP	P = 3, E = 4, G = 1	
+11	Morelia 	GPGGG	P = 1, E = 1, G = 2	
+12	Guadalajara 	GEGGG	P = 0, E = 2, G = 3	
+13	Chiapas 	PPPPP	P = 5, E = 1, G = 2	
+14	Toluca 		PGGEE	P = 1, E = 2, G = 1	
+15	Querétaro 	GPGEG	P = 1, E = 4, G = 0	
+16	Veracruz 	EGPPE	P = 2, E = 2, G = 1	
+17	Atlas 		GEPPE	P = 2, E = 1, G = 1	
 18	Dorados 	PGPGE	P = 2, E = 2, G = 3	
 
 
+			Racha	Sums all		Probability					P	E	G	1	Monterrey	EGGGG	0	1	4	4.22	Pachuca		EEPGE	1	3	1	-0.43	America		EPPGG	2	1	2	-1.84	León		EEGGP	1	2	2	0.45	Cruz Azul	GPPPE	3	1	1	-4.86	Santos 		PGGGE	1	1	3	1.27	U.A.N.L		EPGPE	2	2	1	-2.68	Tijuana 	EPPPP	4	1	0	-7.89	Pumas UNAM	PGGPP	3	0	2	-410	Puebla 		EGPPP	3	1	1	-4.811	Morelia 	GPGGG	1	0	4	212	Guadalajara 	GEGGG	0	1	4	4.213	Chiapas 	PPPPP	5	0	0	-1014	Toluca 		PGGEE	1	2	2	0.415	Querétaro 	GPGEG	1	1	3	1.216	Veracruz 	EGPPE	2	2	1	-2.617	Atlas 		GEPPE	2	2	1	-2.618	Dorados 	PGPGE	2	1	2	-1.8
 
