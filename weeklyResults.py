@@ -177,14 +177,34 @@ gana = 1
 def compute(t):
     return (pierde * t[0]) + (empata * t[1]) + (gana * t[2])
 
+def getRachaNumbers():
+    p = e = g = 0
+    with open('racha.txt') as f:
+        lines = f.readlines()
+        for line in lines:
+            for c in line:
+                if c == 'E':
+                    e += 1
+                if c == 'P':
+                    p += 1
+                if c == 'G':
+                    g += 1            
+            #print str(p) + "\t" + str(e) + "\t" + str(g)
+            print compute((p,e,g))
+            p = e = g = 0
+
 
 alen = len(sys.argv)
 
 print alen
+
 if alen == 2:
-    global week
-    jornada =  sys.argv[1]
-    week = setWeek(jornada)
+    if sys.argv[1] == '-r':
+        getRachaNumbers()
+    else:
+        global week
+        jornada =  sys.argv[1]
+        week = setWeek(jornada)
     #Fix me
     #viewResults()
 
