@@ -196,7 +196,7 @@ def getRachaNumbers():
 
 alen = len(sys.argv)
 
-print alen
+#print alen
 
 if alen == 2:
     if sys.argv[1] == '-r':
