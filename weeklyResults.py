@@ -225,7 +225,8 @@ elif alen == 4:
 
 else:
     message = 'To modify the results add flag -m followed by weed to modify: python resultadosParser.py -m 10\n'
-    message += 'To view the whole week\'s results specify the week number: python resultadosParser.py 10'
+    message += 'To view the whole week\'s results specify the week number: python resultadosParser.py 10\n'
+    message += 'To get the probabilites based on the racha: python weeklyResults.py -r'
     print message
 
     
