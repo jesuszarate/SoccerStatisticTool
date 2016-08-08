@@ -34,5 +34,3 @@ args = parser.parse_args()
 
 print args.date
 parse(parseDate(args.date))
-
-connect()
