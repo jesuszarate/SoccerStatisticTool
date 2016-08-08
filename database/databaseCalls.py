@@ -68,4 +68,4 @@ def insertMatch(homeTeamId, homeGoals, awayTeamId, awayGoals, winner):
 #insertMatch(8, 3, 2, 2, 8)
 
 #Get teamNameId
-getTeamId('America');
+#getTeamId('America');

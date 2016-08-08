@@ -1,6 +1,5 @@
 from lxml import html
 from bs4 import BeautifulSoup
-from mysql.connector import Error
 import requests
 import argparse
 import json
