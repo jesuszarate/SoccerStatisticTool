@@ -27,7 +27,6 @@ def getTeamId(teamName):
         row = cursor.fetchone()
 
         if row is not None:
-            print row[0]
             return row[0]
 
     except Error as e:
@@ -38,10 +37,10 @@ def getTeamId(teamName):
         conn.close()
     
 
-def insertMatch(homeTeamId, homeGoals, awayTeamId, awayGoals, winner):
-    query = "insert into matches (homeTeamId, homeGoals, awayTeamId, awayGoals, winner)"\
-        " values (%s, %s, %s, %s, %s)"
-    match = (homeTeamId, homeGoals, awayTeamId, awayGoals, winner)
+def insertMatch(homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date):
+    query = "insert into matches (homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date)"\
+        " values (%s, %s, %s, %s, %s, %s)"
+    match = (homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date)
     try:
         conn = connect()
         cursor = conn.cursor()
