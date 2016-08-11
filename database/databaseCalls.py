@@ -89,9 +89,9 @@ def insert(query, values):
 
 
 # GET CALLS
-def getMatches():
+def getMatches(date):
     print 'Getting matches...'
-    query = 'SELECT * FROM matches'
+    query = 'SELECT * FROM matches WHERE date=' + date
     return getAll(query);
 
 

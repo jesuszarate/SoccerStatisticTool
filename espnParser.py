@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from lxml import html
 from bs4 import BeautifulSoup
 import requests
@@ -5,8 +6,6 @@ import argparse
 import json
 
 def parseDate(date):
-    print date.year
-    import pdb; pdb.set_trace();
     if date is not None:
     #TODO: Ensure date is in the correct format
         darr = date.split('-')
@@ -30,11 +29,11 @@ def parse(date):
 
     matches = []
     for line in lines:
-        '''
+
         print line.contents[0].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text + ' ' + \
             line.contents[0].find_all("span", {"class":"record"})[0].find_all("a")[0].text + ' ' + \
             line.contents[1].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text             
-            '''  
+
         home = line.contents[0].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text
         away = line.contents[1].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text
         score = line.contents[0].find_all("span", {"class":"record"})[0].find_all("a")[0].text.split(' - ')
@@ -46,6 +45,58 @@ def parse(date):
             #print(json.dumps(gameObj))
             matches.append(gameObj)
     return matches
+
+
+def getWebPage(date):
+    if date is None:
+        return None
+    date = parseDate(date)
+    url = 'http://espndeportes.espn.com/futbol/fixtures/_/fecha/' + date + '/liga/mex.1'
+    print 'fetching data from...'
+    print url
+
+    r = requests.get(url)
+
+    soup = BeautifulSoup(r.content, "lxml")
+
+    lines = soup.find_all("tr", {"class":["odd","even"]})
+    return lines
+
+
+def writeMatchesToFile(date):
+    lines = getWebPage(date)
+
+    matches = []
+    for line in lines:
+        home = cleanUpTeamName(line.contents[0].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + '\t'
+        score = line.contents[0].find_all("span", {"class":"record"})[0].find_all("a")[0].text + '\t' 
+        away = cleanUpTeamName(line.contents[1].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + '\n'
+        match = home + score + away
+        
+        print match
+        matches.append(match)
+
+    writeToFile(matches);
+
+
+def writeToFile(lines):
+    with open('matches.txt', 'w') as f:
+        for line in lines:
+            print line
+            f.write(line.encode('utf8'))
+
+
+# Needed for some unicode characters from mexican teams
+def cleanUpTeamName(teamName):
+    if not teamName.isalpha():
+        if teamName.startswith('Q'):
+            return 'Queretaro'
+        if teamName.startswith('L'):
+            return 'Leon'
+    return teamName
+        
+        
+
                 
 parser = argparse.ArgumentParser()
 parser.add_argument("date", help="Date of the page you want parsed, is the following format mm/dd/yyyy",
@@ -54,3 +105,6 @@ args = parser.parse_args()
 
 print args.date
 #parse(args.date)
+writeMatchesToFile(args.date)
+
+#cleanUpTeamName('Querétaro')
