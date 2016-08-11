@@ -44,11 +44,10 @@ def recordRacha():
     matches = db.getMatches()
 
     results = db.getResults()
-    #for match in matches:
-    match = matches[1]
-    date = match[6]
-    db.insertRachaEntry(match[0], match[1], compareMatchResults(match[2], match[4], results)[0], date)
-    db.insertRachaEntry(match[0], match[3], compareMatchResults(match[4], match[2], results)[0], date)
+    for match in matches:
+        date = match[6]
+        db.insertRachaEntry(match[0], match[1], compareMatchResults(match[2], match[4], results)[0], date)
+        db.insertRachaEntry(match[0], match[3], compareMatchResults(match[4], match[2], results)[0], date)
 
 def compareMatchResults(teamScore, oponentScore, resultOptions):
     # Team wins
