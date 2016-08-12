@@ -60,6 +60,82 @@ def insertMatch(homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date):
         conn.close()
         cursor.close()
 
+def insertRachaEntry(matchId, teamId, result, date):
+
+    query = "insert into racha(matchId, teamId, result, date) values (%s, %s, %s, %s)" #(1, 4, '2016-08-06', 2)"
+    values = (matchId, teamId, result, date)
+    insert(query, values)
+    
+
+def insert(query, values):
+    try:
+        conn = connect()
+        cursor = conn.cursor()
+        cursor.execute(query, values)
+
+        if cursor.lastrowid:
+            print('last insert id', cursor.lastrowid)
+        else:
+            print('last insert id not found')
+
+        conn.commit()
+            
+    except Error as error:
+        print(error)
+    else:
+        print('Connection closed.')
+        conn.close()
+        cursor.close()
+
+
+# GET CALLS
+def getMatches():
+    print 'Getting matches...'
+    query = 'SELECT * FROM matches'
+    return getAll(query);
+
+
+def getResults():
+    print 'Getting results...'
+    query = 'SELECT * FROM results'
+    return getAll(query)
+
+
+def getAll(query):
+    try:
+        conn = connect()
+        cursor = conn.cursor()
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        return rows
+        
+    except Error as e:
+        print(e)
+ 
+    else:
+        cursor.close()
+        conn.close()
+
+
+def getOne(query):
+    try:
+        conn = connect()
+        cursor = conn.cursor()
+        cursor.execute(query)
+ 
+        row = cursor.fetchone()
+ 
+        while row is not None:
+            print(row)
+            row = cursor.fetchone()
+ 
+    except Error as e:
+        print(e)
+ 
+    else:
+        cursor.close()
+        conn.close()
 
 #import pdb; pdb.set_trace()
 
