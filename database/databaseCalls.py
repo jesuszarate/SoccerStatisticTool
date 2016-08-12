@@ -35,9 +35,42 @@ def getTeamId(teamName):
         print('Connection closed.')
         cursor.close()
         conn.close()
-    
+
+def updateMatchScore(matchId, homeGoals, awayGoals, winner):
+    query = "UPDATE matches SET homeGoals=%s, awayGoals=%s, winner=%s WHERE matchId=%s"
+    values = (homeGoals, awayGoals, winner, matchId)
+    insert(query, values)
+
+
+def insertPrediction(matchId, prediction):
+    query = "INSERT INTO predictions (matchId, prediction) VALUES (%s, %s)"
+    values = (matchId, prediction)
+
+    insert(query, values)
+
+def insert(query, values):
+    try:
+        conn = connect()
+        cursor = conn.cursor()
+        cursor.execute(query, match)
+ 
+        if cursor.lastrowid:
+            print('last insert id', cursor.lastrowid)
+        else:
+            print('last insert id not found')
+        
+        conn.commit()
+
+    except Error as error:
+        print(error)
+    else:    
+        print('Connection closed.')
+        conn.close()
+        cursor.close()
+
 
 def insertMatch(homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date):
+    print 'in hereeeee'
     query = "insert into matches (homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date)"\
         " values (%s, %s, %s, %s, %s, %s)"
     match = (homeTeamId, homeGoals, awayTeamId, awayGoals, winner, date)
@@ -100,6 +133,19 @@ def getResults():
     query = 'SELECT * FROM results'
     return getAll(query)
 
+def getMatchId(homeTeamId, awayTeamId, date):
+    query = 'SELECT matchId FROM matches WHERE homeTeamId=' + str(homeTeamId) +\
+        ' AND awayTeamId='+ str(awayTeamId) +\
+        ' AND date=' + date
+    return getOne(query)[0]
+
+def getPredictionId(prediction):
+    query = "SELECT resultId FROM results WHERE result = '" + prediction +"'"
+    result = getOne(query)
+    if result is not None:
+        return result[0]
+    return None
+    
 
 def getAll(query):
     try:
@@ -125,11 +171,15 @@ def getOne(query):
         cursor.execute(query)
  
         row = cursor.fetchone()
- 
-        while row is not None:
-            print(row)
-            row = cursor.fetchone()
- 
+
+        '''
+        while row is None:
+        print 'fetching data...'
+        row = cursor.fetchone()
+        '''
+        return row
+
+     
     except Error as e:
         print(e)
  
