@@ -5,11 +5,16 @@ import argparse
 import json
 
 def parseDate(date):
+    print date.year
+    import pdb; pdb.set_trace();
+    if date is not None:
     #TODO: Ensure date is in the correct format
-    darr = date.split('-')
-    return darr[2] + darr[0] + darr[1]
+        darr = date.split('-')
+        return darr[2] + darr[0] + darr[1]
 
 def parse(date):
+    if date is None:
+        return None
     date = parseDate(date)
     # TODO: Make the league interchangable
     url = 'http://espndeportes.espn.com/futbol/fixtures/_/fecha/' + date + '/liga/mex.1'
@@ -48,4 +53,4 @@ parser.add_argument("date", help="Date of the page you want parsed, is the follo
 args = parser.parse_args()
 
 print args.date
-parse(args.date)
+#parse(args.date)
