@@ -12,20 +12,7 @@ def parseDate(date):
         return darr[2] + darr[0] + darr[1]
 
 def parse(date):
-    if date is None:
-        return None
-    date = parseDate(date)
-    # TODO: Make the league interchangable
-    url = 'http://espndeportes.espn.com/futbol/fixtures/_/fecha/' + date + '/liga/mex.1'
-    print 'fetching data from...'
-    print url
-
-    r = requests.get(url)
-
-    soup = BeautifulSoup(r.content, "lxml")
-
-    lines = soup.find_all("tr", {"class":["odd","even"]})
-
+    lines = getWebPage(date)
 
     matches = []
     for line in lines:
@@ -42,6 +29,10 @@ def parse(date):
             gameObj = {'home' : 
                        {'name' : home,'score': score[0]},\
                            'away' :{'name' : away,'score': score[1]}}
+        else:
+            gameObj = {'home' : 
+                       {'name' : home,'score': 0},\
+                           'away' :{'name' : away,'score': 0}}
             #print(json.dumps(gameObj))
             matches.append(gameObj)
     return matches
@@ -68,9 +59,9 @@ def writeMatchesToFile(date):
 
     matches = []
     for line in lines:
-        home = cleanUpTeamName(line.contents[0].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + '\t'
-        score = line.contents[0].find_all("span", {"class":"record"})[0].find_all("a")[0].text + '\t' 
-        away = cleanUpTeamName(line.contents[1].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + '\n'
+        home = cleanUpTeamName(line.contents[0].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + ','
+        score = line.contents[0].find_all("span", {"class":"record"})[0].find_all("a")[0].text + ',' 
+        away = cleanUpTeamName(line.contents[1].find_all("a", {"class":"team-name"})[0].find_all("span")[0].text) + ',\n'
         match = home + score + away
         
         print match
@@ -105,6 +96,6 @@ args = parser.parse_args()
 
 print args.date
 #parse(args.date)
-writeMatchesToFile(args.date)
+#writeMatchesToFile(args.date)
 
 #cleanUpTeamName('Querétaro')
