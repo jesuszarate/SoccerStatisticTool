@@ -24,17 +24,45 @@ def saveMatches():
         homeScore = o['home']['score']
         awayId =  getTeamId(o['away']['name'])
         awayScore = o['away']['score']
-
-        winner = homeScore
-        if homeScore < awayScore:
-            winner = awayScore
+        winner = matchWinner(homeId, homeScore, awayId, awayScore)
 
         date = formatDate(args.date)
         insertMatch(homeId, homeScore, awayId, awayScore, winner, date)
 
-        #TODO: Uncomment this when time is right
-        #recordRacha(date);        
 
+def updateMatches(date):
+    print '\n\n\n\n'
+    matches = parse(args.date)
+    for o in matches:
+        homeId =  getTeamId(o['home']['name'])
+        homeScore = o['home']['score']
+        awayId =  getTeamId(o['away']['name'])
+        awayScore = o['away']['score']
+        winner = matchWinner(homeId, homeScore, awayId, awayScore)
+        date = formatDate(args.date)
+        matchId = db.getMatchId(homeId, awayId, date)
+
+        db.updateMatchScore(matchId, homeScore, awayScore, winner)
+        recordSingleMatchRacha(matchId, homeId, homeScore, awayId, awayScore, date)
+
+        
+def matchWinner(homeId, homeScore, awayId, awayScore):
+    if homeScore > awayScore:
+        return homeId
+    elif homeScore < awayScore:
+        return awayId
+    else:# A tie is represented by 0
+        return 0
+        
+
+def recordSingleMatchRacha(matchId, homeId, homeScore, awayId, awayScore, date):
+    results = db.getResults()
+    homeResult = compareMatchResults(homeId, awayId, results)
+    awayResult = compareMatchResults(awayId, homeId, results)
+    
+    db.insertRachaEntry(matchId, homeId, homeResult, date)
+    db.insertRachaEntry(matchId, awayId, awayResult, date)
+    
 
 # Records racha for all games in database
 def recordRacha(date):
@@ -44,8 +72,8 @@ def recordRacha(date):
     for match in matches:
         date = match[6]
         # parameters matchId, currentTeam, win/lose/tie, date
-        db.insertRachaEntry(match[0], match[1], compareMatchResults(match[2], match[4], results)[0], date)
-        db.insertRachaEntry(match[0], match[3], compareMatchResults(match[4], match[2], results)[0], date)
+        db.insertRachaEntry(match[0], match[1], compareMatchResults(match[2], match[4], results), date)
+        db.insertRachaEntry(match[0], match[3], compareMatchResults(match[4], match[2], results), date)
 
 
 def recordPredictions(fileName, date):
@@ -84,13 +112,13 @@ def parsePredictionFile(fileName):
 def compareMatchResults(teamScore, oponentScore, resultOptions):
     # Team wins
     if teamScore > oponentScore:
-        return resultOptions[0]
+        return resultOptions[0][0]
     # Team loses
     elif teamScore < oponentScore:
-        return resultOptions[1]
+        return resultOptions[1][0]
     # Match is a draw
     else:
-        return resultOptions[2]
+        return resultOptions[2][0]
 
 # Format date for sql query    
 def formatDate(date):
@@ -100,13 +128,18 @@ def formatDate(date):
 
 
 #recordRacha(formatDate(args.date))
+
+# Save matches to database
 #saveMatches()
+
 #print parsePredictionFile('../matches.txt')
-print recordPredictions('../matches.txt', formatDate(args.date))
+#print recordPredictions('../matches.txt', formatDate(args.date))
 
 #print db.getPredictionId('P')
 
-    
+# Update matches after matches have been added with initial scores of 0
+#updateMatches(formatDate(args.date))
+   
 
 
     
