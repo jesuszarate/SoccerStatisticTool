@@ -127,7 +127,7 @@ def getMatches(date):
     query = 'SELECT * FROM matches WHERE date=' + date
     return getAll(query);
 
-
+# Table for Gana/Pierde/Empata
 def getResults():
     print 'Getting results...'
     query = 'SELECT * FROM results'
