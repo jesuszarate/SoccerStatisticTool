@@ -34,7 +34,7 @@ def parse(date):
                        {'name' : home,'score': 0},\
                            'away' :{'name' : away,'score': 0}}
             #print(json.dumps(gameObj))
-            matches.append(gameObj)
+        matches.append(gameObj)
     return matches
 
 
@@ -94,6 +94,7 @@ parser.add_argument("date", help="Date of the page you want parsed, is the follo
                     type=str)
 args = parser.parse_args()
 
+#parse(args.date)
 print args.date
 #parse(args.date)
 #writeMatchesToFile(args.date)
