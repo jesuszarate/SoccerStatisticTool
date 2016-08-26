@@ -8,6 +8,7 @@ import json
 def parseDate(date):
     if date is not None:
     #TODO: Ensure date is in the correct format
+        print date
         darr = date.split('-')
         return darr[2] + darr[0] + darr[1]
 
@@ -66,15 +67,17 @@ def writeMatchesToFile(date):
         
         print match
         matches.append(match)
-
+    
     writeToFile(matches);
 
 
-def writeToFile(lines):
-    with open('matches.txt', 'w') as f:
+def writeToFile(lines):    
+    file = 'matches.txt'
+    with open(file, 'w') as f:
         for line in lines:
             print line
             f.write(line.encode('utf8'))
+    print 'Information saved to ' + file
 
 
 # Needed for some unicode characters from mexican teams
@@ -96,7 +99,7 @@ args = parser.parse_args()
 
 #parse(args.date)
 print args.date
-#parse(args.date)
+parse(args.date)
 #writeMatchesToFile(args.date)
 
 #cleanUpTeamName('Querétaro')
