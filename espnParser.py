@@ -91,7 +91,7 @@ def cleanUpTeamName(teamName):
         
         
 
-                
+''' REMOVE THIS WHEN I WANT TO USE ON IT'S OWN                
 parser = argparse.ArgumentParser()
 parser.add_argument("date", help="Date of the page you want parsed, is the following format mm/dd/yyyy",
                     type=str)
@@ -103,3 +103,4 @@ parse(args.date)
 #writeMatchesToFile(args.date)
 
 #cleanUpTeamName('Querétaro')
+'''
