@@ -16,3 +16,8 @@ To view the whole week's results specify the week number:
 ```
 python weeklyResults.py 10
 ```
+
+To write to write a week's matches specify the -w flag folled by that weeks date
+```
+python main.py 09-09-2016
+```
