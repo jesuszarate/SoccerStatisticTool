@@ -21,3 +21,5 @@ To write to write a week's matches specify the -w flag folled by that weeks date
 ```
 python main.py 09-09-2016
 ```
+
+The output will be written to the 'matches.txt' file
