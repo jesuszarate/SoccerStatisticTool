@@ -12,10 +12,11 @@ db = database.databaseCalls
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('-d', action='store', dest='date',
+parser.add_argument('-w', action='store', dest='date',
                     help="Date of the page you want parsed, is the following format mm/dd/yyyy")
 
 args = parser.parse_args()
 
 
-espnParser.writeMatchesToFile(args.date)
+if(args.date is not None):
+    espnParser.writeMatchesToFile(args.date)
