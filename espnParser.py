@@ -9,7 +9,7 @@ def parseDate(date):
     if date is not None:
     #TODO: Ensure date is in the correct format
         print date
-        darr = date.split('-')
+        darr = date.split('/')
         return darr[2] + darr[0] + darr[1]
 
 def parse(date):
@@ -89,9 +89,11 @@ def cleanUpTeamName(teamName):
             return 'Leon'
     return teamName
         
-        
 
-''' REMOVE THIS WHEN I WANT TO USE ON IT'S OWN                
+d = "04/22/2016" #input("Date of the page you want parsed, is the following format mm/dd/yyyy\n")
+parse(d)
+
+''' REMOVE THIS WHEN I WANT TO USE ON IT'S OWN
 parser = argparse.ArgumentParser()
 parser.add_argument("date", help="Date of the page you want parsed, is the following format mm/dd/yyyy",
                     type=str)
